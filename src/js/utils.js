@@ -3,7 +3,7 @@ export function isNumber(element) {
 }
 
 export function isString(element) {
-  return typeof element === "String";
+  return typeof (element) === 'string';
 }
 
 console.log("a");
