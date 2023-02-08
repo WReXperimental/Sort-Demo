@@ -16,6 +16,9 @@ export const ageBox=document.createElement('div')
 export const userAgeNumber = document.createElement("label");
 userAgeNumber.id = 'number';
 
+export const userTableBox=document.createElement('div')
+export const userTable=document.createElement('table')
+
 userInfoDom.id = data.userDom.userInfoDom.id;
 userNameInput.id = data.userDom.userNameInput.id;
 userNameInput.type = "text";
@@ -54,3 +57,6 @@ userInfoDom.appendChild(userIncomeLabel);
 userInfoDom.appendChild(userIncomeInput);
 
 userInfoDom.appendChild(userInfoSubmit);
+
+userTableBox.appendChild(userTable)
+
