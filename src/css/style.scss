@@ -37,3 +37,13 @@ body {
 #user_age{
   background-color: black;
 }
+
+table,th,td{
+  border: solid 1px black;
+  border-collapse: collapse;
+}
+table{
+  margin: 30px;
+  table-layout: fixed;
+  width: 160px;
+}

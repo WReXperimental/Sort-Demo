@@ -23,13 +23,15 @@ import sortBy from "sort-by";
 //   },
 // ];
 
-const userInfoList =[ ] 
+const userInfoList = [];
+// 创建空list，这样就可以用index拿到数据放到table里
 
 userDom.userAgeInput.addEventListener("mousemove", () => {
   userDom.userAgeNumber.textContent = userDom.userAgeInput.value;
 });
 
 let flag = false;
+// 单例功能要放在click功能外面，不然每次click，flag会重置
 
 userDom.userInfoSubmit.addEventListener("click", () => {
   // console.log('submit');
@@ -43,10 +45,10 @@ userDom.userInfoSubmit.addEventListener("click", () => {
   if (user instanceof User) {
     userInfoList.push({ ...userInfo });
     // console.log(userInfoList[1].name)
-    console.log(sort(["age", "name"]));
+    // console.log(sort(["age", "name"]));
+    // 如果在这里排序的话用后面用userAge.textContent=userInfoList[L].age的userInfoList就会被排序，那么用index拿到的数据就不准
 
-
-    //table initialize
+    //table initialize,
     if (!flag) {
       flag = true;
 
@@ -71,26 +73,25 @@ userDom.userInfoSubmit.addEventListener("click", () => {
     }
 
     // create a table of user's info
-   
-      const tableRow=document.createElement('tr')
-      const userNumber=document.createElement('td')
-      const userName=document.createElement('td')
-      const userAge=document.createElement('td')
-      const userIncome=document.createElement('td')
 
-      let L=userInfoList.length-1
-      userNumber.textContent=userInfoList.length
-      userName.textContent=userInfoList[L].name
-      userAge.textContent=userInfoList[L].age
-      userIncome.textContent=userInfoList[L].income
+    const tableRow = document.createElement("tr");
+    const userNumber = document.createElement("td");
+    const userName = document.createElement("td");
+    const userAge = document.createElement("td");
+    const userIncome = document.createElement("td");
 
-      tableRow.appendChild(userNumber)
-      tableRow.appendChild(userName)
-      tableRow.appendChild(userAge)
-      tableRow.appendChild(userIncome)
+    let L = userInfoList.length - 1;
+    userNumber.textContent = userInfoList.length;
+    userName.textContent = userInfoList[L].name;
+    userAge.textContent = userInfoList[L].age;
+    userIncome.textContent = userInfoList[L].income;
 
-      userDom.userTable.appendChild(tableRow)
-    
+    tableRow.appendChild(userNumber);
+    tableRow.appendChild(userName);
+    tableRow.appendChild(userAge);
+    tableRow.appendChild(userIncome);
+
+    userDom.userTable.appendChild(tableRow);
   } else {
     console.error(user.errorInfo);
   }

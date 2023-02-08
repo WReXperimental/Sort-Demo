@@ -38,7 +38,7 @@ userIncomeLabel.htmlFor = userIncomeInput.id;
 
 userNameLabel.textContent = "Name:";
 userAgeLabel.textContent = "Age:";
-userAgeNumber.textContent = "";
+userAgeNumber.textContent = userAgeInput;
 userIncomeLabel.textContent = "Income:";
 userInfoSubmit.textContent = "Submit";
 
